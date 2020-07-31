@@ -17,7 +17,9 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+//the actual sudoku game activity
 public class SudokuGame extends AppCompatActivity {
+    //creating instance varibles and widgets
     EditText[][] editTexts = new EditText[9][9];
     String[][] compare = new String[9][9];
 
@@ -34,30 +36,32 @@ public class SudokuGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
         difficulty = Integer.parseInt(intent.getExtras().getString("difficulty"));
-        //zeroCount = difficulty;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sudoku_game);
 
-
+        //linking variables to widgets
         textViewTitle = findViewById(R.id.TextViewTitle);
         btn_b1 = findViewById(R.id.btn_b1);
         btn_hint = findViewById(R.id.btn_hint);
         btn_solve = findViewById(R.id.btn_solve);
 
+        //creating a completed sudoku board
         board = new Sudoku(9, 0);
         board.fillValues();
 
+        //transfer the values to EditText widgets
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 String editTextID = "editText" + i + j;
                 int resID = getResources().getIdentifier(editTextID, "id", getPackageName());
                 editTexts[i][j] = (EditText) findViewById(resID);
                 editTexts[i][j].setText(String.valueOf(board.mat[i][j]));
-
-
             }
         }
+        //deleting some numbers depending on the difficulty that the user chose
         deleteNumbers();
+
+        //creating a copy of the board that will be later used to compare
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 compare[i][j] = editTexts[i][j].getText().toString();
@@ -65,6 +69,7 @@ public class SudokuGame extends AppCompatActivity {
                     compare[i][j] = "0";
                 }
 
+                //also setting the given values immutable and unchangeable
                 if (!editTexts[i][j].getText().toString().equals("")) {
                     editTexts[i][j].setKeyListener(null);
                     editTexts[i][j].setInputType(InputType.TYPE_NULL);
@@ -75,6 +80,7 @@ public class SudokuGame extends AppCompatActivity {
         }
     }
 
+    //method to delete a number of values from the completed sudoku board
     public void deleteNumbers() {
         while (difficulty > 0) {
             int r_row = rand.nextInt(9);
@@ -87,6 +93,7 @@ public class SudokuGame extends AppCompatActivity {
         }
     }
 
+    //method to update the compare 2D array and also checking whether the user has completed the sukodu puzzle correctly
     public void update() {
         zeroCount = 0;
         solved = true;
@@ -103,12 +110,16 @@ public class SudokuGame extends AppCompatActivity {
         }
     }
 
+    //onclick method for btn_b1
     public void setBtn_b1(View view) {
         Intent intent = new Intent(this, SudokuDifficulty.class);
         startActivity(intent);
     }
 
-    public void setBtn_hint(View view) { //////////////////////////nneed fix, completed puzzle and then click
+    //onclick method for btn_hint
+    public void setBtn_hint(View view) {
+
+        //gives a random hint on an unanswered/ incorrect spot
         while (true && zeroCount != 0) {
             int i = rand.nextInt(9);
             int j = rand.nextInt(9);
@@ -124,6 +135,7 @@ public class SudokuGame extends AppCompatActivity {
         }
     }
 
+    //onclick method for btn_solve
     public void setBtn_solve(View view) {
         update();
         if (solved && (zeroCount == 0)) {

@@ -15,17 +15,22 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//activity for user to choose a difficulty of sudoku they wish to challenge
 public class SudokuDifficulty extends AppCompatActivity {
+
+    //creating instance variables and widgets
     RadioGroup choices;
     RadioButton easy, inter, adv;
     Button btn_b, btn_cont;
     int difficulty = 10;
     TextView text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sudoku_diffuculty);
 
+        //linking variables to widgets and buttons
         choices = findViewById(R.id.choices);
         easy = findViewById(R.id.rbEasy);
         inter = findViewById(R.id.rbInter);
@@ -33,6 +38,8 @@ public class SudokuDifficulty extends AppCompatActivity {
         btn_b = findViewById(R.id.btn_b);
         btn_cont = findViewById(R.id.btn_cont);
         text = findViewById(R.id.text);
+
+        //choices of the difficulty level are selected
         choices.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -47,11 +54,13 @@ public class SudokuDifficulty extends AppCompatActivity {
         });
     }
 
+    //onclick method for back button
     public void setBtn_b(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
+    //onclick method for continue button, sends a message to SudokuGame class for the difficulty chosen
     public void setBtn_cont(View view){
         Intent intent = new Intent(this, SudokuGame.class);
         String dif_str = String.valueOf(difficulty);

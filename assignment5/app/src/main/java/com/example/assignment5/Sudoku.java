@@ -1,9 +1,10 @@
 package com.example.assignment5;
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //NOT ORIGINAL CODE, TAKEN FROM https://www.geeksforgeeks.org/program-sudoku-generator/, ALL CREDIT
-//GOES TO THE ORIGINAL AUTHOR
+//GOES TO THE ORIGINAL AUTHOR (Ankur Trisal (ankur.trisal@gmail.com))
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//This is a sudoku generator that I found online, I made slight modification to it to suit my need
 /* Java program for Sudoku generator  */
 import java.lang.*;
 import java.util.Random;
@@ -36,8 +37,6 @@ public class Sudoku {
         // Fill remaining blocks
         fillRemaining(0, SRN);
 
-        // Remove Randomly K digits to make game
-        removeKDigits();
     }
 
     // Fill the diagonal SRN number of SRN x SRN matrices
@@ -159,70 +158,4 @@ public class Sudoku {
         }
         return false;
     }
-
-    // Remove the K no. of digits to
-    // complete game
-    public void removeKDigits()
-    {
-        /*
-        int count = K;
-        while (count != 0)
-        {
-            int cellId = randomGenerator(N*N);
-
-            // System.out.println(cellId);
-            // extract coordinates i  and j
-            int i = (cellId/N);
-            int j = cellId%9;
-            if (j != 0)
-                j = j - 1;
-
-            // System.out.println(i+" "+j);
-            if (mat[i][j] != 0)
-            {
-                count--;
-                mat[i][j] = 0;
-            }
-        }
-        */
-        //I used my own version of randomizing instead of the one provided
-        int count = K;
-        Random rand = new Random();
-
-        while(count > 0){
-            int i =  rand.nextInt(N);
-            int j =  rand.nextInt(N);
-
-            if (mat[i][j] != 0)
-            {
-                count--;
-                mat[i][j] = 0;
-            }
-        }
-    }
-
-    // Print sudoku_game
-    public void printSudoku()
-    {
-        for (int i = 0; i<N; i++)
-        {
-            for (int j = 0; j<N; j++)
-                System.out.print(mat[i][j] + " ");
-            System.out.println();
-        }
-        System.out.println();
-    }
-
-    // Driver code
-    //this is useless for my program
-    /*
-    public static void main(String[] args)
-    {
-        int N = 9, K = 20;
-        Sudoku sudoku_game = new Sudoku(N, K);
-        sudoku_game.fillValues();
-        sudoku_game.printSudoku();
-    }
-
-     */
 }

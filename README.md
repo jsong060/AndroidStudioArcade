@@ -22,6 +22,7 @@ This project includes 2 mini-games combined together with a simple user interfac
 ## Build
 
 you can download the full release APK from the following URL:
+I did all of my test on a Pixel 3A AVD from Android Studio, there might be issues if the device you are using has a different screen size or resolution.
 
 ## Architecture
 

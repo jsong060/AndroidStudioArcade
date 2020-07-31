@@ -21,7 +21,7 @@ This project includes 2 mini-games combined together with a simple user interfac
 
 ## Build
 
-you can download the full release APK from the following URL:
+you can download the full release APK from the following path: asg5/assignment5/app/release/app-release.apk
 I did all of my test on a Pixel 3A AVD from Android Studio, there might be issues if the device you are using has a different screen size or resolution.
 
 ## Architecture
@@ -36,4 +36,4 @@ This multilayered architecture is great for future improvement, one can easily a
 
 ## Test
 
-I've decided to do manual testing instead of using testing frameworks. I combined the testing with the short description video.
+I've decided to do manual testing instead of using testing frameworks. I combined the testing with the short description video. Youtube link: https://youtu.be/bczHbMghJj4

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 
+//Main menu of the application
 public class MainActivity extends AppCompatActivity {
     Button btnTTT, btnSud;
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnSudClick(View view){
-        Intent intent = new Intent(MainActivity.this, Sudoku.class);
+        Intent intent = new Intent(MainActivity.this, SudokuDifficulty.class);
         startActivity(intent);
     }
 

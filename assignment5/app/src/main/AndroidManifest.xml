@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Sudoku" />
+        <activity android:name=".SudokuGame" />
         <activity android:name=".Tictactoe"/>
         <activity android:name=".Restart"/>
+        <activity android:name=".SudokuDifficulty"/>
     </application>
 
 </manifest>

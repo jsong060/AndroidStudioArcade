@@ -1,3 +1,7 @@
+//Author: Jia Xuan Song
+//Course:  SEG2015
+//Professor: Timothy Lethbridge
+
 package com.example.assignment5;
 
 import android.content.Intent;
@@ -24,17 +28,30 @@ public class Restart extends AppCompatActivity {
         btnMenu = findViewById(R.id.btnMenu);
         textRestart = findViewById(R.id.textRestart);
 
-        textRestart.setText(msg);
+        if(msg.equals("p1win")){
+            textRestart.setText("Congratulation, player 1 wins!");
+        }else if(msg.equals("p2win")){
+            textRestart.setText("Congratulation, player 2 wins!");
+        }else{
+            textRestart.setText("Congratulation, you solved the Sudoku puzzle!");
+        }
+
 
     }
 
     public void btnMenuClick(View view){
-        Intent intent = new Intent(this, Tictactoe.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
     public void btnRestartClick(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        if(msg.equals("p1win")||msg.equals("p2win")){
+            Intent intent = new Intent(this, Tictactoe.class);
+            startActivity(intent);
+        }else{
+            Intent intent = new Intent(this, SudokuDifficulty.class);
+            startActivity(intent);
+        }
+
     }
 }

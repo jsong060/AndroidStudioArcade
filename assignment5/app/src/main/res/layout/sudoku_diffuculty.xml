@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="200dp"
+        android:text="Choose a level of difficulty:"
+        android:textColor="#000000" />
+
+    <RadioGroup
+        android:id="@+id/choices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:checkedButton="@+id/rbEasy">
+
+        <RadioButton
+            android:id="@+id/rbEasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/easy"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="92dp" />
+
+        <RadioButton
+            android:id="@+id/rbInter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intermediate"
+            tools:layout_editor_absoluteX="96dp"
+            tools:layout_editor_absoluteY="313dp" />
+
+        <RadioButton
+            android:id="@+id/rbAdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/advanced"
+            tools:layout_editor_absoluteX="149dp"
+            tools:layout_editor_absoluteY="340dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_cont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/choices"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:onClick="setBtn_cont"
+        android:text="Continue"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="466dp" />
+
+    <Button
+        android:id="@+id/btn_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/choices"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="206dp"
+        android:onClick="setBtn_b"
+        android:text="Back"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="466dp" />
+
+</RelativeLayout >

@@ -1,3 +1,7 @@
+//Author: Jia Xuan Song
+//Course:  SEG2015
+//Professor: Timothy Lethbridge
+
 package com.example.assignment5;
 
 import androidx.appcompat.app.AppCompatActivity;

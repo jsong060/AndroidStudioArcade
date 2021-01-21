@@ -36,4 +36,4 @@ This multilayered architecture is great for future improvement, one can easily a
 
 ## Test
 
-I've decided to do manual testing instead of using testing frameworks. I combined the testing with the short description video. Youtube link: *https://youtu.be/FGgL3vMm8bs* new link, the old one did not work for some reason, hope this is okay
+I've decided to do manual testing instead of using testing frameworks. I combined the testing with the short description video. Youtube link: *https://youtu.be/FGgL3vMm8bs* 

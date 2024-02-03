@@ -1,4 +1,4 @@
-# Assignment 5
+# Android Arcade Game
 
 ## Description
 
